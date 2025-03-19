@@ -1,0 +1,128 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2025-01-15T18:02:38.299Z",
+        "line": 5,
+        "name": "Testing with Simple Alert",
+        "description": "",
+        "id": "testing-with-tags;testing-with-simple-alert",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4925030400,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User is on the alert page",
+            "match": {
+              "location": "stepDefinitions.Alerts.giveCondition1()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 139972800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User clicks the simple alert button",
+            "match": {
+              "location": "stepDefinitions.Alerts.whenCondition1()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 9688100,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Alert opens",
+            "match": {
+              "location": "stepDefinitions.Alerts.thenCOndition1()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 11220800,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Read the Text from it and print it",
+            "match": {
+              "location": "stepDefinitions.Alerts.andCondition1()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 34765200,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Close the alert",
+            "match": {
+              "location": "stepDefinitions.Alerts.andCondition2()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 70475300,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Read the result text",
+            "match": {
+              "location": "stepDefinitions.Alerts.andCondition4()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1516097400,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Close Browser",
+            "match": {
+              "location": "stepDefinitions.Alerts.close()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@activity3"
+          },
+          {
+            "name": "@SimpleAlert"
+          },
+          {
+            "name": "@SmokeTest"
+          }
+        ]
+      }
+    ],
+    "name": "Testing with Tags",
+    "description": "",
+    "id": "testing-with-tags",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Activity3.feature",
+    "tags": [
+      {
+        "name": "@activity3",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
