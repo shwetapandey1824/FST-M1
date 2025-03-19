@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="98f5286c-34f5-4574-85cc-5c920ae189e4" created="3.58.0" activeEnvironment="Default environment" encryptionMode="Not encrypted" name="REST Activity2" projectVersion="" updated="3.58.0 2025-01-10T10:05:45Z" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" id="66057bca-e37b-4181-bcd9-0891746a39ce" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://petstore.swagger.io" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings id="eb61e281-91a5-4382-9a26-82a7227f9c88"/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://petstore.swagger.io</con:endpoint>
+    </con:endpoints>
+    <con:resource name="FindByStatus" path="/v2/pet/findByStatus" id="a8713f4f-839f-4605-8d37-f0dcde48f451">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="FindByStatus" id="cde79696-d82e-4bb0-8690-01e8f9cf8d63" method="GET">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>status</con:name>
+            <con:value>sold</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>sold</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="21da5577-a7c3-40a5-aa52-865e87ca56a9" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>https://petstore.swagger.io</con:endpoint>
+          <con:parameters>
+            <con:entry key="status" value="sold"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>status</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="12756b76-c55f-4e85-ae49-31b2a22c9f0e" name="https://petstore.swagger.io Test Suite">
+    <con:settings id="12271d35-c3a1-46f3-8b59-762f4c9e42c1"/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="e93bf386-c935-43ee-b6e9-2e0e452f0576" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="https://petstore.swagger.io Test Case 1" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Request 1" id="57a21511-00b9-4c7d-ab4e-9fe4c1f6d9ab">
+        <con:settings/>
+        <con:config service="https://petstore.swagger.io" resourcePath="/v2/pet/findByStatus" methodName="FindByStatus" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Request 1" id="21da5577-a7c3-40a5-aa52-865e87ca56a9" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://petstore.swagger.io</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://petstore.swagger.io/v2/pet/findByStatus</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="4d67d29f-2f6a-41a2-ae18-ffcf4c680ae1" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="78b1df98-5597-431f-95da-1540c8a5e2fa" name="JSONPath Match">
+              <con:configuration>
+                <path>$[0]['id']</path>
+                <content>1639253498</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="9bcba3da-f4d4-4156-9839-333d0ebf77f2" name="JSONPath Match 2">
+              <con:configuration>
+                <path>$[0]['category']['id']</path>
+                <content>3</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="status" value="sold"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>status</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:xmlTemplates/>
+    <con:parameters/>
+  </con:reporting>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to ReadyAPI functional tests
+
+// If hardcoding the token, uncomment and change line 5
+// token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new java.io.FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new java.io.PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>
